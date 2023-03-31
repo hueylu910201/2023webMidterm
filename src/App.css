@@ -1,42 +1,75 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General Styles */
+/* RWD Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
   }
 }
 
-.card {
-  padding: 2em;
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+/* body */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Layout */
+.mainLayout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.layoutHeader {
+  grid-area: header;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+.layoutFooter {
+  grid-area: footer;
+  padding: 0;
+  height: auto;
+  line-height: 1.6;
+}
+
+.layoutContent {
+  grid-area: content;
 }
