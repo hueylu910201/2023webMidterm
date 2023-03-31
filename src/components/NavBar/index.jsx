@@ -7,29 +7,25 @@ export default function NavBar({ open, onClose }) {
 
     const NavBarContent = () => (
         <>
-            <NavLink to="/products/category/tableware"
+            <NavLink to="/products/category/動畫"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Tableware
+                動畫
             </NavLink>
-            <NavLink to="/products/category/cookware"
+            <NavLink to="/products/category/喜劇"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Cookware
+                喜劇
             </NavLink>
-            <NavLink to="/products/category/home-accessories"
+            <NavLink to="/products/category/動作"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Home accessories
+                動作
             </NavLink>
-            <NavLink to="/products/category/lighting"
+            <NavLink to="/products/category/音樂歌舞"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Lighting
+                音樂歌舞
             </NavLink>
-            <NavLink to="/products/category/textile"
+            <NavLink to="/products/category/冒險"
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Textile
-            </NavLink>
-            <NavLink to="/products/category/furniture"
-                className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
-                Furniture
+                冒險
             </NavLink>        
         </>
     )

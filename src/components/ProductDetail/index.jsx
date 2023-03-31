@@ -45,7 +45,7 @@ function ProductDetail({ product }) {
                </p>
                <div className={styles.wrap}>
                   <p className={styles.price} >
-                     US${product.price}.00
+                     NT${product.price}.00
                   </p>
                   <p className={styles.status}>
                      Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}

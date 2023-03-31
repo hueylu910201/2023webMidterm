@@ -17,27 +17,25 @@ export default function Header({ title, slogan }) {
                         onClick={() => setIsOnTouch(!isOnTouch)}
                         isOnTouch={isOnTouch}
                     />
-                    <Link to="/">
-                        <h1 className={styles.headerTitle}>
-                            {title}
-                        </h1>
-                    </Link>
-
-                    <p className={styles.headerSlogan}>
-                        {slogan}
-                    </p>
-
+                    <div className={styles.headerItem}>
+                        <Link to="/">
+                            <span className={styles.headerTitle}>
+                                首頁
+                            </span>
+                        </Link>
+                        <Link to="/">
+                            <span className={styles.headerTitle}>
+                                分類:{title}
+                            </span>
+                        </Link>
+                        <div className={styles.iconWrap}>
+                            <SetColorMode />
+                            <CartSummary />
+                        </div>
+                    </div>
                 </div>
-
-
-                <hr className={styles.hrHeaderLine} />
                 <NavBar open={isOnTouch} onClose={() => setIsOnTouch(false)} />
             </div>
-            <div className={styles.iconWrap}>
-                <SetColorMode/>
-                <CartSummary/>                
-            </div>
-
         </div>
 
     );

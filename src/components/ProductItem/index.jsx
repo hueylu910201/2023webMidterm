@@ -6,31 +6,26 @@ export default function ProductItem({ product }) {
 
    return (
       <div className={styles.item}>
-        <Link to={`/products/id/${product.id}`}>
+         <Link to={`/products/id/${product.id}`}>
             <img
-               style={{ width: '100%' }}
+               style={{ width: '100%' ,height: '100%',borderRadius:'3%'}}
                src={product.image}
                alt={product.name} />
          </Link>
          <div className={styles.info}>
-            <h6 className={styles.category}>
-               {product.category}
-            </h6>
             <h2 className={styles.name}>
                {product.name}
             </h2>
-            <p className={styles.description}>
-               {product.description}
-            </p>
-            <div className={styles.more}>
-               <Link to={`/products/id/${product.id}`} className={styles.link}>
-                  See More ...
-               </Link>
+            <div className={styles.mainInfo}>
+               <span className={styles.category}>
+                  {product.category}
+               </span>
                <span
-                  className={styles.textGray}>
-                  USD {product.price}.00
+                  className={styles.during}>
+                  片長 : {product.during}
                </span>
             </div>
+
          </div>
       </div>
    );

@@ -1,25 +1,40 @@
 .header {
-  text-align: center;
+  width: 100%;
+  margin-bottom: 5rem;
+  z-index: 1;
 }
 
 .headerTitle {
-  font-size: 1.3rem;
+  display: flex;
+  font-size: 1.5rem;
   padding: 0;
+  top: 2rem;
   padding-top: 1rem;
+  font-weight: bold;
+}
+
+.headerItem{
+  display:none;
 }
 
 @media (min-width: 768px) {
   .headerTitle {
-    font-size: 1.8rem;
+    display: flex;
+    font-size: 1.3rem;
+    padding: 1.5rem;
+    margin-right: 0.1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+  }
+  .headerItem{
+    display:flex;
+    justify-content: flex-end;
+    background-color: aqua;
   }
 }
 
-.headerSlogan {
-  opacity: 0.6;
-  padding: 0;
-  margin: 0;
-  line-height: 0.8;
-}
 
 .hrHeaderLine {
   margin: 25px auto 30px;
@@ -32,7 +47,6 @@
 }
 
 .iconWrap {
-  position: absolute;
   right: 0.5rem;
   top: 2rem;
   display: grid;
@@ -42,8 +56,16 @@
 @media (min-width: 768px) {
   .iconWrap {
     right: 1rem;
-    top: 2rem;
+    top: 3rem;
     display: grid;
-    grid-template-columns: repeat(2, 4rem);
+    align-items: center;
+    grid-template-columns: repeat(2, 2.5rem);
+  }
+}
+@media (max-width: 768px) {
+  .headerItem{
+    display:flex;
+    justify-content: flex-end;
+    background-color: aqua;
   }
 }

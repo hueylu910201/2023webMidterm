@@ -8,7 +8,7 @@ import products from "../json/products.json";
 
 function Home() {
   const {
-    token: { colorBgBase, colorTextBase },
+    token: { colorBgBase, colorTextBase , fontFamily },
   } = theme.useToken();
   const { categoryName } = useParams();
   const _products = !categoryName
@@ -18,7 +18,7 @@ function Home() {
     );
 
   const title = !categoryName
-    ? "NORDIC NEST Shopping Cart"
+    ? "電影清單"
     : _products[0]?.category;
 
   return (
@@ -28,7 +28,8 @@ function Home() {
         <style>{`
             body { 
               background-color: ${colorBgBase}; 
-              color: ${colorTextBase}
+              color: ${colorTextBase};
+              fontfamily: ${fontFamily};
             }
         `}</style>
       </Helmet>

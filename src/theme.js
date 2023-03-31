@@ -6,7 +6,9 @@ const darkTheme = {
     colorPrimary: "#1677ff",
     colorBgBase	: "#222222",
     colorTextBase: "#ffffff",
+    fontFamily:'Noto Sans TC',
     colorTextFooter: "#ffffff",
+    fontWeight:"900",
     colorBgFooter: "#000000",
   },
   components: {
