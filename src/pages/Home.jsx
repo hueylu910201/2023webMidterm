@@ -37,12 +37,14 @@ function Home() {
         className="layoutHeader"
         title={title}
         slogan="An example made by Vite."
+        products={_products}
       />
       <div className="layoutCOntent container">
         <ProductList products={_products} />
       </div>
       <Footer className="layoutFooter" />
     </div>
+    
   );
 }
 

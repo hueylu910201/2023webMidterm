@@ -3,7 +3,7 @@ import { Drawer } from 'antd';
 
 import styles from './navbar.module.css';
 
-export default function NavBar({ open, onClose }) {
+export default function NavBar({ open, onClose , title}) {
 
     const NavBarContent = () => (
         <>
@@ -36,7 +36,7 @@ export default function NavBar({ open, onClose }) {
                 <NavBarContent />
             </div>
             <Drawer 
-                title="CATEGORY" 
+                title={title} 
                 placement="left" 
                 onClose={onClose} 
                 open={open} 

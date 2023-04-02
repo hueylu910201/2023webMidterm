@@ -27,12 +27,22 @@
 
 .navItem:hover {
   color: white;
+  background-color:rgb(230, 230, 230);
   opacity: 1;
   text-shadow: 0px 0px 30px white;
 }
 
 .navItemActive {
-  composes: navItem;
+  font-size: 1.2rem;
+  /* margin-bottom: 2rem;
+  margin-left: 2rem; */
+  cursor: pointer;
+  color: white;
+  padding: 0.8rem;
+  text-decoration: none;
+  border-radius: 10%;
+  background-color:rgb(230, 230, 230);
+  transition: all 0.5s ease-in-out;
   opacity: 1;
 }
 
@@ -46,13 +56,38 @@
 
   .navItem {
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 0;
     margin-left: 0;
     text-align: center;
+    padding: 0.8rem;
+    border-radius: 10%;
   }
   .navItem:hover {
     color: white;
+  }
+}
+
+@media (max-width:768px){
+  .navItemActive {
+    font-size: 1rem;
+    /* margin-bottom: 2rem;
+    margin-left: 2rem; */
+    cursor: pointer;
+    color: white;
+    /* padding: 0.8rem; */
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    border-radius: 0;
+  }
+  .navItem {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: start;
+    padding: 0.8rem;
   }
 }
 

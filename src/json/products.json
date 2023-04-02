@@ -2,6 +2,7 @@
   { 
     "id": "1",
     "category": "動畫",
+    "all_category":"all",
     "name": "超級瑪利歐兄弟電影版",
     "eng_name":"THE SUPER MARIO BROS MOVIE",
     "date":"2023/4/5",
@@ -17,6 +18,7 @@
   {
     "id": "2",
     "category": "動畫",
+    "all_category":"all",
     "name": "鈴芽之旅",
     "eng_name":"SUZUME NO TOJIMARI",
     "date":"2023/03/02",
@@ -32,6 +34,7 @@
   {
     "id": "3",
     "category": "喜劇",
+    "all_category":"all",
     "name": "關於我和鬼變成家人的那件事",
     "eng_name":"MARRY MY DEAD BODY",
     "date":"2023/02/10",
@@ -47,6 +50,7 @@
   {
     "id": "4",
     "category": "動作",
+    "all_category":"all",
     "name": "沙贊！眾神之怒",
     "eng_name":"SHAZAM FURY OF THE GODS",
     "date":"2023/03/16",
@@ -62,6 +66,7 @@
   {
     "id": "5",
     "category": "動作",
+    "all_category":"all",
     "name": "65：恐怖行星",
     "eng_name":"65",
     "date":"2023/03/31",
@@ -77,6 +82,7 @@
   {
     "id": "6",
     "category": "動作",
+    "all_category":"all",
     "name": "媽的多重宇宙",
     "eng_name":"EVERYTHING EVERYWHERE ALL AT ONCE",
     "date":"2023/03/09",
@@ -92,6 +98,7 @@
   {
     "id": "7",
     "category": "喜劇",
+    "all_category":"all",
     "name": "做工的人 電影版",
     "eng_name":"WORKERS THE MOVIE",
     "date":"2023/03/31",
@@ -107,6 +114,7 @@
   {
     "id": "8",
     "category": "音樂歌舞",
+    "all_category":"all",
     "name": "愛瑪 (音樂劇)",
     "eng_name":"EMMA (THE MUSICAL)",
     "date":"2023/04/06",
@@ -122,6 +130,7 @@
   {
     "id": "9",
     "category": "動作",
+    "all_category":"all",
     "name": "捍衛任務4",
     "eng_name":"JOHN WICK CHAPTER FOUR",
     "date":"2023/03/22",
@@ -137,6 +146,7 @@
   {
     "id": "10",
     "category": "冒險",
+    "all_category":"all",
     "name": "龍與地下城：盜賊榮耀",
     "eng_name":"DUNGEONS AND DRAGONS HONOR AMONG THIEVES",
     "date":"2023/03/29",
@@ -152,6 +162,7 @@
   {
     "id": "11",
     "category": "音樂歌舞",
+    "all_category":"all",
     "name": "過去那五年 (音樂劇)",
     "eng_name":"THE LAST FIVE YEARS (THE MUSICAL)",
     "date":"2023/04/26",
@@ -167,6 +178,7 @@
   {
     "id": "12",
     "category": "冒險",
+    "all_category":"all",
     "name": "桃子樹的最後豐收",
     "eng_name":"ALCARRAS",
     "date":"2023/03/31",

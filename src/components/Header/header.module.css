@@ -53,6 +53,20 @@
   grid-template-columns: repeat(2, 2.5rem);
 }
 
+.iconWrap2 {
+  position: absolute;
+  right: 0.5rem;
+  top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 2.5rem);
+}
+
+.categortTitle{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 @media (min-width: 768px) {
   .iconWrap {
     right: 1rem;
@@ -61,11 +75,7 @@
     align-items: center;
     grid-template-columns: repeat(2, 2.5rem);
   }
-}
-@media (max-width: 768px) {
-  .headerItem{
-    display:flex;
-    justify-content: flex-end;
-    background-color: aqua;
+  .iconWrap2 {
+    display: none;
   }
 }

@@ -3,6 +3,7 @@ import { ConfigProvider } from 'antd';
 import { useSelector } from "react-redux";
 import { HelmetProvider } from 'react-helmet-async'
 import Home from './pages/Home'
+import NewHomePage from './pages/NewHomePage';
 import Product from './pages/Product';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSLice";
@@ -15,7 +16,8 @@ function Router() {
         <HelmetProvider context={{}}>
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<NewHomePage />} />
+              <Route path="/Home" element={<Home />} />
               <Route path="products">
                 <Route path="category/:categoryName" element={<Home />} />
                 <Route path="id/:productId" element={<Product />} />

@@ -34,20 +34,17 @@
   composes: baseMenuBar;
   top: 16px;
   transition: all 0.25s linear;
-  transform: rotate(-4deg);
 }
 
 .hamMenuBar2 {
   composes: baseMenuBar;
   transition: all 0.25s linear;
-  transform: rotate(2deg);
 }
 
 .hamMenuBar3 {
   composes: baseMenuBar;
   bottom: 16px;
   transition: all 0.25s linear;
-  transform: rotate(-2deg);
 }
 
 .hamMenuBar1_Touch {
