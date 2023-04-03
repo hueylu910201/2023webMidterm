@@ -77,17 +77,23 @@
     color: white;
     /* padding: 0.8rem; */
     text-decoration: none;
+    margin-left: 0.15rem;
     transition: all 0.5s ease-in-out;
     opacity: 1;
     border-radius: 0;
   }
-  .navItem {
+  .navItem{
     color: white;
     font-size: 1rem;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-left: 0.15rem;
     text-align: start;
     padding: 0.8rem;
+  }
+  .menu{
+    position:relative;
+    top: 0;
+    left: 0;
   }
 }
 

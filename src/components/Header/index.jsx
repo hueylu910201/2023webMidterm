@@ -43,7 +43,7 @@ export default function Header({ title, products }) {
                                 首頁
                             </span>
                         </Link>
-                        <Link to="/Home">
+                        <Link to="/products/category">
                             <Dropdown overlay={menu}>
                                 <span className={styles.headerTitle}>分類</span>
                             </Dropdown>
@@ -61,7 +61,10 @@ export default function Header({ title, products }) {
                 <h1 className={styles.categortTitle}>
                     {title}
                 </h1>
-                <NavBar open={isOnTouch} title={title} onClose={() => setIsOnTouch(false)} />
+                <div className={styles.navBar}>
+                    <NavBar open={isOnTouch} title={title} onClose={() => setIsOnTouch(false)} />
+                </div>
+
             </div>
         </div>
 

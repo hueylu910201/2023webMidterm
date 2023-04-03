@@ -17,7 +17,7 @@ function Router() {
           <BrowserRouter>
             <Routes>
             <Route path="/" element={<NewHomePage />} />
-              <Route path="/Home" element={<Home />} />
+              <Route path="/products/category" element={<Home />} />
               <Route path="products">
                 <Route path="category/:categoryName" element={<Home />} />
                 <Route path="id/:productId" element={<Product />} />
