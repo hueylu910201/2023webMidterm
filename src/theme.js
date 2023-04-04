@@ -24,6 +24,7 @@ const lightTheme = {
   token: {
     colorBgFooter: "#3e3f97",
     colorTextFooter: '#ffffff',
+    colorHover:'#a8a8a8',
   },
   components: {
     Button: {

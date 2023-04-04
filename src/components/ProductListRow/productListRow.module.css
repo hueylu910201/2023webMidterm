@@ -1,0 +1,16 @@
+.porductList{
+    margin-top: 3rem;
+    overflow-x: scroll;
+}
+.row{
+    display:flex;
+    flex-wrap:nowrap;
+}
+@media (max-width:768px){
+    .porductList{
+        margin-top: -2rem;
+    }
+    .row{
+        flex-wrap: wrap;
+    }
+}

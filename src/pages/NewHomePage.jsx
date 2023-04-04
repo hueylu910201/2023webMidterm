@@ -1,14 +1,17 @@
 import Header from "../components/Header"
+import MyCarousel from "../components/MyCarousel";
+import ProductListRow from "../components/ProductListRow";
+import Footer from "../components/Footer";
+import movies from "../json/products.json"
+
+
 export default function NewHomePage() {
     return (
         <div className="mainmainLayout">
-            <div>
-            <Header 
-                />
-                <h1>Welcome to the new home page!</h1>
-                <p>This is the content for the new home page.</p>
-            </div>
-
+             <Header/>
+            <MyCarousel/>
+            <ProductListRow movies={movies}/>
+            <Footer/>
         </div>
     )
 }

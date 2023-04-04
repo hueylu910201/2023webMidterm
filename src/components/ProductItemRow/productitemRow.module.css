@@ -1,0 +1,31 @@
+.item {
+   border-radius: 3%;
+   padding: 0;
+   height: 90%;
+   width: 75%;
+   margin: 0 auto;
+   padding-bottom: 2rem;
+}
+
+
+.category {
+   opacity: 0.7;
+   margin-bottom: 0.2rem;
+
+}
+
+.name {
+   margin-bottom: 0.1rem;
+   font-size: 1.2rem;
+}
+
+
+
+.during {
+   opacity: 0.7;
+   margin-left: 0.3rem;
+}
+
+.mainInfo{
+   display: flex;
+}

@@ -38,6 +38,11 @@ export default function Header({ title, products }) {
                         isOnTouch={isOnTouch}
                     />
                     <div className={styles.headerItem}>
+                        <img
+                            alt="logo"
+                            className={styles.logo}
+                            src="\images\movielogo.png"
+                        />
                         <Link to="/">
                             <span className={styles.headerTitle}>
                                 首頁
@@ -47,6 +52,16 @@ export default function Header({ title, products }) {
                             <Dropdown overlay={menu}>
                                 <span className={styles.headerTitle}>分類</span>
                             </Dropdown>
+                        </Link>
+                        <Link to="/">
+                            <span className={styles.headerTitle}>
+                                登入
+                            </span>
+                        </Link>
+                        <Link to="/">
+                            <span className={styles.headerTitle}>
+                                註冊
+                            </span>
                         </Link>
                         <div className={styles.iconWrap}>
                             <SetColorMode />

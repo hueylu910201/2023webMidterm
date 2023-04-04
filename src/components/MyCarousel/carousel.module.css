@@ -1,0 +1,18 @@
+.carouselItem{
+    width: 100%;
+    height: 100%;
+}
+.contentStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45rem;
+    color: #fff;
+    text-align: center;
+    background-color: #364d79;
+}
+@media(max-width:768px){
+    .contentStyle{
+        height: 15rem;
+    }
+}

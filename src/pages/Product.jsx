@@ -28,7 +28,7 @@ function Product() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="Product Detail"
+            title="電影介紹"
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">
