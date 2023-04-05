@@ -18,7 +18,7 @@ export default function Header({ title, products }) {
                 <Link to="/products/category/動作">喜劇</Link>
             </Menu.Item>
             <Menu.Item key="3">
-                <Link to="/products/category/冒險">動作</Link>
+                <Link to="/products/category/動作">動作</Link>
             </Menu.Item>
             <Menu.Item key="4">
                 <Link to="/products/category/音樂歌舞">音樂歌舞</Link>

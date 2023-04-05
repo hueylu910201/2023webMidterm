@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ReactPlayer from 'react-player'
 import { Row, Col, Select } from "antd";
 import { useSearchParams } from 'react-router-dom';
 import AddToBasket from "../AddToBasket"
@@ -16,30 +17,51 @@ function ProductDetail({ product }) {
    }, [initQty])
 
    return (
-      <Row gutter={[32, 32]}
-         style={{ justifyContent: 'center' }}
-      >
-         <Col
-            xs={{ span: 24 }}
-            lg={{ span: 6 }}
+      <div className={styles.container}>
+         <Row gutter={[24, 24]}
+            style={{ justifyContent:'center',marginTop: '2rem', width: '100%' }}
          >
-            <img
-               alt={product.name}
-               className={styles.image}
-               src={product.image}
-            />
-         </Col>
-         <Col
-            xs={{ span: 24 }}
-            lg={{ span: 14 }}
-         >
-            <div className={styles.info} >
-               <h2 className={styles.category} >
-                  {product.category}
-               </h2>
-               <h1 className={styles.name} >
-                  {product.name}
-               </h1>
+            <Col
+               xs={{ span: 24 }}
+               lg={{ span: 6 }}
+            >
+               <img
+                  alt={product.name}
+                  className={styles.image}
+                  src={product.image}
+               />
+            </Col>
+            <Col
+               xs={{ span: 24 }}
+               lg={{ span: 14 }}
+            >
+               <div className={styles.info} >
+                  <h2 className={styles.category} >
+                     {product.category}
+                  </h2>
+                  <h1 className={styles.name} >
+                     {product.name}
+                  </h1>
+                  <h1 className={styles.name} >
+                     {product.eng_name}
+                  </h1>
+                  <h1 className={styles.director} >
+                     導演:{product.director}
+                  </h1>
+                  <h2 className={styles.actor} >
+                     演員:{product.actor}
+                  </h2>
+                  <h2 className={styles.during} >
+                     時長:{product.during}
+                  </h2>
+
+               </div>
+            </Col>
+            <Col
+               xs={{ span: 24 }}
+               lg={{ span: 14 }}
+            >
+               <h2>劇情簡介:</h2>
                <p className={styles.description}>
                   {product.description_long}
                </p>
@@ -48,13 +70,13 @@ function ProductDetail({ product }) {
                      NT${product.price}.00
                   </p>
                   <p className={styles.status}>
-                     Status: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
+                     庫存狀態: {product.countInStock > 0 ? "供貨中" : "缺貨中"}
                   </p>
                   <div className={styles.qty}>
-                     Qty: {"   "}
+                     數量: {"   "}
                      <Select
                         defaultValue={qty}
-                        key={qty}                        
+                        key={qty}
                         className={styles.selectStyle}
                         onChange={val => setQty(val)}
                      >
@@ -66,13 +88,30 @@ function ProductDetail({ product }) {
                      </Select>
                   </div>
                   <p className={styles.qty}>
-                     Total Price: {product.price * qty}
+                     總價: {product.price * qty}
                   </p>
-                  <AddToBasket  product={product} qty={qty} />
+                  <AddToBasket product={product} qty={qty} />
                </div>
-            </div>
-         </Col>
-      </Row>
+            </Col>
+            <Col
+               xs={{ span: 20 }}
+               sm={{ span: 12 }}
+               lg={{ span: 8 }}
+               xl={{ span: 6 }}
+               xxl={{ span: 4 }}
+               justifyContent='center'
+            >
+               <div className={styles.playerWrapper}>
+                  <ReactPlayer
+                     url={product.url}
+                     width='100%'
+                     height='100%'
+                  />
+               </div>
+            </Col>
+         </Row>
+      </div>
+
    );
 }
 

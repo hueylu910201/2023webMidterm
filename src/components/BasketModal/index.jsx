@@ -23,13 +23,13 @@ export default function BasketModal({ isOpen, toggleModal }) {
 
    return (
       <Modal
-         title="Shopping Basket"
+         title="您的購物車"
          open={isOpen}
          onCancel={handleCancel}
          footer={null}
       >
          {cartItems.length === 0 ? (
-            <div>Cart is empty</div>
+            <div>購物車空空的!</div>
          ) : (
             cartItems.map(item => (
                <li key={item.id} className={styles.item}>
@@ -41,7 +41,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
                   <div className={styles.content}>
                      <div className={styles.name}>{item.name}</div>
                      <div>
-                        Qty: {"   "}
+                        數量: {"   "}
                         <Select
                            defaultValue={item.qty}
                            onChange={(qty) => dispatch(addCartItems({
@@ -73,7 +73,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             ))
          )}
          <div className={styles.wrap}>
-            Total
+            總金額:
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
          <Button
@@ -81,7 +81,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             type="primary"
          >
             <CartIcon color={"#ffffff"} />
-            <span style={{ marginLeft: 12 }}>Start Checkout</span>
+            <span style={{ marginLeft: 12 }}>結帳</span>
          </Button>
       </Modal>
    );
