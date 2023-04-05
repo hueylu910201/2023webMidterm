@@ -32,6 +32,11 @@ export default function Header({ title, products }) {
     return (
         <div className="container">
             <div className={styles.header}>
+                {/* <img
+                    alt="logo"
+                    className={styles.logo2}
+                    src="\images\movielogo.png"
+                /> */}
                 <div className={styles.headerWwrap}>
                     <HamburgerMenu
                         onClick={() => setIsOnTouch(!isOnTouch)}
@@ -43,6 +48,7 @@ export default function Header({ title, products }) {
                             className={styles.logo}
                             src="\images\movielogo.png"
                         />
+                        <span className={styles.logoName}>影視快帝</span>
                         <Link to="/">
                             <span className={styles.headerTitle}>
                                 首頁

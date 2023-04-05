@@ -8,7 +8,7 @@ import products from "../json/products.json";
 
 function Home() {
   const {
-    token: { colorBgBase, colorTextBase , fontFamily },
+    token: { colorBgBase, colorTextBase, fontFamily },
   } = theme.useToken();
   const { categoryName } = useParams();
   const _products = !categoryName
@@ -22,7 +22,7 @@ function Home() {
     : _products[0]?.category;
 
   return (
-    <div className="mainLayout" style={{overflowX:'hidden'}}>
+    <div className="mainLayout" style={{ overflowX: 'hidden' }}>
       <Helmet>
         <title>{title}</title>
         <style>{`
@@ -30,6 +30,7 @@ function Home() {
               background-color: ${colorBgBase}; 
               color: ${colorTextBase};
               fontfamily: ${fontFamily};
+              font-family: 'FakePearl-Regular',sans-serif;
             }
         `}</style>
       </Helmet>
@@ -44,7 +45,7 @@ function Home() {
       </div>
       <Footer className="layoutFooter" />
     </div>
-    
+
   );
 }
 

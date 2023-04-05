@@ -35,6 +35,7 @@
 .title{
     font-size: 2.5rem;
     font-weight: bold;
+    font-family: 'FakePearl-Regular',sans-serif;
     display: flex;
     margin: 1rem;
     margin-left: 3rem;

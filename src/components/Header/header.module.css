@@ -7,7 +7,6 @@
 .headerTitle {
   display: flex;
   font-size: 1.5rem;
-  padding: 0;
   top: 2rem;
   padding-top: 1rem;
   font-weight: bold;
@@ -16,17 +15,17 @@
 .headerItem {
   display: none;
 }
-
 @media (min-width: 768px) {
   .headerTitle {
     display: flex;
     font-size: 1.3rem;
     padding: 1.5rem;
-    margin-right: 0.1rem;
-    padding-top: 1rem;
+    margin-right: 0.3rem;
+    padding-top: 1.2rem;
     font-weight: bold;
     align-items: center;
     justify-content: center;
+    font-family: 'FakePearl-Regular',sans-serif;
   }
 
   .headerItem {
@@ -42,6 +41,19 @@
     margin-top: 0.3rem;
     width: 4rem;
     height: 4rem;
+  }
+
+  .logoName{
+    position: absolute;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    left: 7rem;
+    top: 0.7rem;
+    margin-top: 0.3rem;
+    width: 10rem;
+    height: 4rem;
+    font-family: 'FakePearl-Regular',sans-serif;
   }
 }
 

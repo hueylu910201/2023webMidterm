@@ -23,6 +23,7 @@
   opacity: 0.6;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
+  font-family: 'FakePearl-Regular',sans-serif;
 }
 
 .navItem:hover {
@@ -62,6 +63,7 @@
     text-align: center;
     padding: 0.8rem;
     border-radius: 10%;
+    font-family: 'FakePearl-Regular',sans-serif;
   }
   .navItem:hover {
     color: white;

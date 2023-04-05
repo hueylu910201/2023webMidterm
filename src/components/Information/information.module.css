@@ -22,6 +22,7 @@
 .contentTitle {
     font-size: 2.5rem;
     font-weight: bold;
+    font-family: 'FakePearl-Regular',sans-serif;
 }
 
 .textLine {
@@ -30,6 +31,9 @@
     background-color: black;
 }
 
+.textArea h2{
+    font-family: 'FakePearl-Regular',sans-serif;
+}
 
 @media(max-width:991px) {
     .container {
