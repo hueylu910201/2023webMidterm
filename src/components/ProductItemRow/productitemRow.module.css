@@ -1,8 +1,8 @@
 .item {
    border-radius: 3%;
    padding: 0;
-   height: 90%;
-   width: 75%;
+   height: 88%;
+   width: 90%;
    margin: 0 auto;
    padding-bottom: 2rem;
 }
@@ -15,8 +15,8 @@
 }
 
 .name {
-   margin-bottom: 0.1rem;
    font-size: 1.2rem;
+   margin-bottom: 0.1rem;
 }
 
 
@@ -28,4 +28,11 @@
 
 .mainInfo{
    display: flex;
+}
+
+@media(max-width:768px){
+   .item{
+      height: 85%;
+      margin-top: 2rem;
+   }
 }

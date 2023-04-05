@@ -1,9 +1,7 @@
-
 import Link from '../Link';
 import styles from './productitemRow.module.css';
 
 export default function ProductItemRow({product}) {
-
    return (
       <div className={styles.item}>
          <Link to={`/products/id/${product.id}`}>
@@ -13,9 +11,9 @@ export default function ProductItemRow({product}) {
                alt={product.name} />
          </Link>
          <div className={styles.info}>
-            <h2 className={styles.name}>
+            <p className={styles.name}>
                {product.name}
-            </h2>
+            </p>
             <div className={styles.mainInfo}>
                <span className={styles.category}>
                   {product.category}

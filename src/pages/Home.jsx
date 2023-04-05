@@ -22,7 +22,7 @@ function Home() {
     : _products[0]?.category;
 
   return (
-    <div className="mainLayout">
+    <div className="mainLayout" style={{overflowX:'hidden'}}>
       <Helmet>
         <title>{title}</title>
         <style>{`
