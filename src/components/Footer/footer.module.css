@@ -8,10 +8,17 @@
      'copyRight copyRight copyRight'
    ;
    grid-template-rows: auto 3rem;
-   grid-template-columns: 12fr 1fr minmax(7rem, 1fr);
+   grid-template-columns: 3fr 1fr minmax(4rem, 1fr) minmax(4rem, 1fr);
    gap: 1em;
    overflow: hidden;
 }
+
+.logo {
+   align-items: center;
+   margin-top: 0.3rem;
+   width: 8rem;
+   height: 8rem;
+ }
 
 .hrFooterLine {
    margin: 25px auto 30px;
@@ -25,9 +32,16 @@
 }
 
 .content {
+   display: flex;
+   margin-left: 8rem;
+   align-items: center;
    grid-area: content;
 }
 
+.content p{
+   font-weight: 800;
+   font-size: 2rem;
+}
 .followUs {
    grid-area: followUs;
 }
@@ -59,4 +73,17 @@
    display: flex;
    justify-content: center;
    align-items: flex-start;
+}
+
+@media(max-width:768px){
+
+   .content{
+      display: flex;
+      flex-direction: column;
+      margin-left: 0rem;
+   }
+
+   .content p{
+      font-size: 1.5rem;
+   }
 }

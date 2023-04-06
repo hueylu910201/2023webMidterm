@@ -25,10 +25,10 @@ const darkTheme = {
 const lightTheme = {
   algorithm: theme.defaultAlgorithm,
   token: {
-    colorBgFooter: "#3e3f97",
+    colorBgFooter: "#02a4f0",
     colorTextFooter: '#ffffff',
     colorHover:'#a8a8a8',
-    colorHeader:'#75cff9',
+    colorHeader:'#94BFEB',
     colorInformation:'#a7e3ff',
     colorList:'#ffffff',
   },

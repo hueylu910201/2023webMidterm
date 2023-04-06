@@ -14,8 +14,23 @@ export default function Footer() {
             <div className="container">
                 <footer className={styles.footer}>
                     <div className={styles.content}>
-                        <p style={{ fontWeight: 800 }}>DESCRIPTIONS</p>
-                        <p style={{ textIndent: '1rem' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum deleniti iste sit enim. Veniam eos sequi laudantium optio, saepe excepturi illo autem quibusdam delectus illum ipsa? Nobis culpa debitis error!</p>
+                        <img
+                            alt="logo"
+                            className={styles.logo}
+                            src="\images\movielogo.png"
+                        />
+                        <p>影視快帝</p>
+                    </div>
+                    <div className={styles.contactUS}>
+                        <p style={{ fontWeight: 800 }}>服務說明</p>
+                        <p>方案介紹</p>
+                        <p>客服中心</p>
+                        <p>隱私政策</p>
+                    </div>
+                    <div className={styles.contactUS}>
+                        <p style={{ fontWeight: 800 }}>相關資訊</p>
+                        <p>關於</p>
+                        <p>使用條款</p>
                     </div>
                     <div className={styles.followUS}>
                         <p style={{ fontWeight: 800 }}>追蹤我們</p>
@@ -28,13 +43,9 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-                    <div className={styles.contactUS}>
-                        <p style={{ fontWeight: 800 }}>聯絡我們</p>
-                        <p>01 2345 6789</p>
-                    </div>
-                    <p className={styles.copyRight}>
+                    {/* <p className={styles.copyRight}>
                         © 2006 - 2023 Copyright Digital Technology Design
-                    </p>
+                    </p> */}
                 </footer>
             </div>
 

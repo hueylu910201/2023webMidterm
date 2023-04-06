@@ -17,8 +17,8 @@ export default function NavBar({ open, onClose, title }) {
                 className={({ isActive }) => (isActive ? styles.navItemActive : styles.navItem)}>
                 首頁
             </NavLink>
-            <Menu mode="horizontal" triggerSubMenuAction="click">
-                <SubMenu title="電影分類▿" style={{ fontSize: '1rem', fontFfamily: 'FakePearl-Regular'}}>
+            <Menu mode="inline" triggerSubMenuAction="click">
+                <SubMenu title="電影分類" style={{ fontSize: '1.1rem', fontFfamily: 'FakePearl-Regular' , marginLeft:'-1rem' ,}}>
                     <Menu.Item key="0">
                         <NavLink to="/products/category/">所有分類</NavLink>
                     </Menu.Item>
