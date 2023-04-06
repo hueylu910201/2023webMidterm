@@ -31,7 +31,7 @@
   .headerItem {
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(167, 227, 255);
+    /* background-color: rgb(117, 207, 249); */
   }
 
   .logo {

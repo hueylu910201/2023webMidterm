@@ -22,6 +22,7 @@
     left: 0;
     height: 50px;
     width: 50px;
+    border-width: 0;
 }
 
 .right {
@@ -30,6 +31,7 @@
     right: 0;
     height: 50px;
     width: 50px;
+    border-width: 0;
 }
 
 .title{
@@ -42,8 +44,17 @@
     align-items: center;
 }
 @media (max-width:768px) {
+    .arrowContainer {
+        position: "relative";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .porductList {
         margin-top: -2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .row {

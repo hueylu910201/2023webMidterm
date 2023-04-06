@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { theme } from 'antd';
 import { Menu, Dropdown } from 'antd';
 import Link from "../Link"
 import NavBar from "../NavBar";
@@ -9,6 +10,9 @@ import SetColorMode from "../SetColorMode"
 
 export default function Header({ title, products }) {
     const [isOnTouch, setIsOnTouch] = useState(false);
+    const {
+        token: { colorHeader ,colorTextBase},
+    } = theme.useToken();
     const menu = (
         <Menu>
             <Menu.Item key="1">
@@ -42,13 +46,13 @@ export default function Header({ title, products }) {
                         onClick={() => setIsOnTouch(!isOnTouch)}
                         isOnTouch={isOnTouch}
                     />
-                    <div className={styles.headerItem}>
+                    <div className={styles.headerItem} style={{backgroundColor:colorHeader}}>
                         <img
                             alt="logo"
                             className={styles.logo}
                             src="\images\movielogo.png"
                         />
-                        <span className={styles.logoName}>影視快帝</span>
+                        <span className={styles.logoName} style={{color:colorTextBase}}>影視快帝</span>
                         <Link to="/">
                             <span className={styles.headerTitle}>
                                 首頁

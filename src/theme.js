@@ -10,6 +10,9 @@ const darkTheme = {
     colorTextFooter: "#ffffff",
     fontWeight:"900",
     colorBgFooter: "#000000",
+    colorHeader:"#494c4d",
+    colorInformation:"#444545",
+    colorList:"#212121",
   },
   components: {
     Button: {
@@ -25,6 +28,9 @@ const lightTheme = {
     colorBgFooter: "#3e3f97",
     colorTextFooter: '#ffffff',
     colorHover:'#a8a8a8',
+    colorHeader:'#75cff9',
+    colorInformation:'#a7e3ff',
+    colorList:'#ffffff',
   },
   components: {
     Button: {
