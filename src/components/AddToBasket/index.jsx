@@ -13,7 +13,7 @@ export default function AddToCart({ product, qty }) {
 
   const openNotification = () => {
     notification.open({
-      message: 'Shopping Notification',
+      message: '通知!',
       description:
         `已新增 ${qty}部 ${product.name} 到您的購物車!`,
       placement: 'bottomRight'

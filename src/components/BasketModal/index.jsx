@@ -9,7 +9,7 @@ import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
 export default function BasketModal({ isOpen, toggleModal }) {
-   const { token: { colorTextBase ,colorHeader} } = theme.useToken();
+   const { token: { colorHeader} } = theme.useToken();
 
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
