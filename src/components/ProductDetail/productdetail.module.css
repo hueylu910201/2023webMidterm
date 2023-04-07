@@ -8,19 +8,19 @@
 
 .info {
    padding: 0 1.2rem;
-   font-family: 'FakePearl-Regular',sans-serif;
+   font-family: 'FakePearl-Regular', sans-serif;
 }
 
 .category {
    opacity: 0.4;
    margin-bottom: 0.2rem;
-   font-family: 'FakePearl-Regular',sans-serif;
+   font-family: 'FakePearl-Regular', sans-serif;
 }
 
 .name {
    margin-bottom: 0.5rem;
    font-size: 1.5rem;
-   font-family: 'FakePearl-Regular',sans-serif;
+   font-family: 'FakePearl-Regular', sans-serif;
 }
 
 .description {
@@ -29,7 +29,7 @@
    margin-bottom: 1rem;
    text-indent: 2rem;
    text-align: justify;
-   font-family: 'FakePearl-Regular',sans-serif;
+   font-family: 'FakePearl-Regular', sans-serif;
 }
 
 .wrap {
@@ -39,30 +39,33 @@
 
 .price {
    font-size: 1.5rem;
-   font-family: 'FakePearl-Regular',sans-serif;
+   font-family: 'FakePearl-Regular', sans-serif;
 }
 
-.playerWrapper{
+.playerWrapper {
    display: flex;
    justify-content: center;
    width: 30rem;
-   height: 23rem;
+   height: 20rem;
    position: relative;
    /* padding-top: 56.25%;  */
 }
 
 
-@media(max-width:1068px){
-   .playerWrapper{
-
+@media(max-width:1068px) {
+   .playerWrapper {
       width: 25rem;
       height: 15rem;
    }
 }
 
-@media(max-width:768px){
-   .container{
+@media(max-width:768px) {
+   .container {
       display: flex;
       justify-content: center;
+   }
+
+   .playerWrapper {
+      margin-left: -0.5rem;
    }
 }

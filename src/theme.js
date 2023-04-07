@@ -6,13 +6,13 @@ const darkTheme = {
     colorPrimary: "#1677ff",
     colorBgBase	: "#222222",
     colorTextBase: "#ffffff",
-    fontFamily:'Noto Sans TC',
+    fontFamily:'FakePearl-Regular',
     colorTextFooter: "#ffffff",
     fontWeight:"900",
     colorBgFooter: "#000000",
     colorHeader:"#494c4d",
-    colorInformation:"#444545",
-    colorList:"#212121",
+    colorInformation:"#636363",
+    colorList:"#3a3b3b",
   },
   components: {
     Button: {

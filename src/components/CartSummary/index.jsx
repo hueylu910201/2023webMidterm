@@ -7,7 +7,7 @@ import styles from "./cartsummary.module.css"
 import { selectCartItems } from "../../redux/cartSlice";
 
 export default function CartSummary() {
-  const { token: { colorTextBase }} = theme.useToken();
+  const { token: { colorTextBase ,colorBgFooter}} = theme.useToken();
   const [isOpen, setIsOpen] = useState(false)
   const cartItems = useSelector(selectCartItems);
   const count = (cartItems.length > 0)
@@ -18,7 +18,7 @@ export default function CartSummary() {
   return (
     <>
       <div onClick={toggleOpen} className={styles.cartSummary} >
-        <Badge count={count} color="#6366F2" style={{color: 'white'}}>
+        <Badge count={count} color={colorBgFooter} style={{color: 'white'}}>
           <CartIcon color={colorTextBase} />
         </Badge>
       </div>    

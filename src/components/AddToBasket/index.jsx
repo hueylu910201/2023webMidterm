@@ -3,15 +3,19 @@ import { useDispatch } from "react-redux";
 import { addCartItems } from "../../redux/cartSlice";
 import styles from "./addtobasket.module.css"
 import { Basket } from "../Icons";
+import { theme } from "antd";
 
 export default function AddToCart({ product, qty }) {
+  const {
+    token: { colorHeader ,colorTextBase},
+} = theme.useToken();
   const dispatch = useDispatch();
 
   const openNotification = () => {
     notification.open({
       message: 'Shopping Notification',
       description:
-        `${qty} ${qty > 1 ? "pieces" : "piece"} of ${product.name} ${qty > 1 ? "have" : "has"} been added to your cart.`,
+        `已新增 ${qty}片 ${product.name} 到您的購物車!`,
       placement: 'bottomRight'
     });
   };
@@ -29,7 +33,7 @@ export default function AddToCart({ product, qty }) {
   };
 
   return (
-    <Button type="primary" className={styles.btn} onClick={addToCart}>
+    <Button type="primary" className={styles.btn} onClick={addToCart} style={{backgroundColor:colorHeader}}>
       <Basket color={"#ffffff"}/>加入購物車
     </Button>
   );

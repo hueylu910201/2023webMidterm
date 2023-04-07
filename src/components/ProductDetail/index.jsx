@@ -18,8 +18,8 @@ function ProductDetail({ product }) {
 
    return (
       <div className={styles.container}>
-         <Row gutter={[24, 24]}
-            style={{ justifyContent:'center',marginTop: '2rem', width: '100%' }}
+         <Row gutter={[32, 32]}
+            style={{ justifyContent: 'center', marginTop: '2rem', width: '100%' }}
          >
             <Col
                xs={{ span: 24 }}
@@ -35,32 +35,15 @@ function ProductDetail({ product }) {
                xs={{ span: 24 }}
                lg={{ span: 14 }}
             >
-               <div className={styles.info} >
-                  <h2 className={styles.category} >
-                     {product.category}
-                  </h2>
-                  <h1 className={styles.name} >
-                     {product.name}
-                  </h1>
-                  <h1 className={styles.name} >
-                     {product.eng_name}
-                  </h1>
-                  <h1 className={styles.director} >
-                     導演:{product.director}
-                  </h1>
-                  <h2 className={styles.actor} >
-                     演員:{product.actor}
-                  </h2>
-                  <h2 className={styles.during} >
-                     時長:{product.during}
-                  </h2>
-
-               </div>
-            </Col>
-            <Col
-               xs={{ span: 24 }}
-               lg={{ span: 14 }}
-            >
+               <h2 className={styles.category} >
+                  {product.category}
+               </h2>
+               <h1 className={styles.name} >
+                  {product.name}
+               </h1>
+               <h1 className={styles.name} >
+                  {product.eng_name}
+               </h1>
                <h2>劇情簡介:</h2>
                <p className={styles.description}>
                   {product.description_long}
@@ -94,10 +77,34 @@ function ProductDetail({ product }) {
                </div>
             </Col>
             <Col
+               xs={{ span: 24 }}
+               lg={{ span: 12 }}
+               justifyContent='start'
+            >
+               <div className={styles.info} >
+
+                  <h1 className={styles.name} >
+                     {product.name}
+                  </h1>
+                  <h1 className={styles.name} >
+                     {product.eng_name}
+                  </h1>
+                  <h3 className={styles.during} >
+                     時長:{product.during}
+                  </h3>
+                  <h2 className={styles.director} >
+                     導演:{product.director}
+                  </h2>
+                  <h2 className={styles.actor} >
+                     演員:{product.actor}
+                  </h2>
+               </div>
+            </Col>
+            <Col
                xs={{ span: 20 }}
                sm={{ span: 12 }}
                lg={{ span: 8 }}
-               xl={{ span: 6 }}
+               xl={{ span: 8 }}
                xxl={{ span: 4 }}
                justifyContent='center'
             >

@@ -9,7 +9,7 @@ import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
 export default function BasketModal({ isOpen, toggleModal }) {
-   const { token: { colorTextBase } } = theme.useToken();
+   const { token: { colorTextBase ,colorHeader} } = theme.useToken();
 
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
@@ -79,6 +79,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
          <Button
             className={styles.btn}
             type="primary"
+            style={{backgroundColor:colorHeader}}
          >
             <CartIcon color={"#ffffff"} />
             <span style={{ marginLeft: 12 }}>結帳</span>
