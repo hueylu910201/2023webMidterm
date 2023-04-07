@@ -7,6 +7,7 @@ import NewHomePage from './pages/NewHomePage';
 import Product from './pages/Product';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSLice";
+import AnimateRouter from './AnimateRouter';
 
 function Router() {
   const lightMode = useSelector(selectLightMode);
@@ -15,14 +16,7 @@ function Router() {
       <ConfigProvider theme={theme} >
         <HelmetProvider context={{}}>
           <BrowserRouter>
-            <Routes>
-            <Route path="/" element={<NewHomePage />} />
-              <Route path="/products/category" element={<Home />} />
-              <Route path="products">
-                <Route path="category/:categoryName" element={<Home />} />
-                <Route path="id/:productId" element={<Product />} />
-              </Route>
-            </Routes>
+            <AnimateRouter/>
           </BrowserRouter>
         </HelmetProvider>
       </ConfigProvider>

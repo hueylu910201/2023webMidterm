@@ -13,7 +13,7 @@ export default function Information() {
             <Col
                 sm={{ span: 24 }}
                 lg={{ span: 6 }}
-                xl={{ span: 6 }}
+                xl={{ span: 10 }}
                 xxl={{ span: 6 }}
                 className={`${styles.content}`}
             >
@@ -46,7 +46,7 @@ export default function Information() {
             <Col
                 sm={{ span: 24 }}
                 lg={{ span: 6 }}
-                xl={{ span: 6 }}
+                xl={{ span: 10 }}
                 xxl={{ span: 6 }}
                 className={styles.content}>
 

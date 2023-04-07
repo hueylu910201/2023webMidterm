@@ -5,6 +5,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
+import { motion } from "framer-motion";
 
 function Home() {
   const {
@@ -22,10 +23,16 @@ function Home() {
     : _products[0]?.category;
 
   return (
-    <div className="mainLayout" style={{ overflowX: 'hidden' }}>
-      <Helmet>
-        <title>{title}</title>
-        <style>{`
+    <motion.div
+      initial={{ opacity: 0, x: -200, y: 0 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      exit={{ opacity: 0, x: window.innerWidth }}
+      transition={{ duration: 0.3, type: "spring" }}
+    >
+      <div className="mainLayout" style={{ overflowX: 'hidden' }}>
+        <Helmet>
+          <title>{title}</title>
+          <style>{`
             body { 
               background-color: ${colorBgBase}; 
               color: ${colorTextBase};
@@ -33,18 +40,20 @@ function Home() {
               font-family: 'FakePearl-Regular',sans-serif;
             }
         `}</style>
-      </Helmet>
-      <Header
-        className="layoutHeader"
-        title={title}
-        slogan="An example made by Vite."
-        products={_products}
-      />
-      <div className="layoutCOntent container">
-        <ProductList products={_products} />
+        </Helmet>
+        <Header
+          className="layoutHeader"
+          title={title}
+          slogan="An example made by Vite."
+          products={_products}
+        />
+        <div className="layoutCOntent container">
+          <ProductList products={_products} />
+        </div>
+        <Footer className="layoutFooter" />
       </div>
-      <Footer className="layoutFooter" />
-    </div>
+    </motion.div>
+
 
   );
 }
