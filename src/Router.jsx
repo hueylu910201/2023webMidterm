@@ -3,7 +3,7 @@ import { ConfigProvider } from 'antd';
 import { useSelector } from "react-redux";
 import { HelmetProvider } from 'react-helmet-async'
 import { darkTheme, lightTheme } from './theme';
-import { selectLightMode } from "./redux/colorSLice";
+import { selectLightMode } from "./redux/colorSlice";
 import AnimateRouter from './AnimateRouter';
 
 function Router() {

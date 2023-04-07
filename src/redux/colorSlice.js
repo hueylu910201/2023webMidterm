@@ -1,6 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { darkTheme } from '../theme';
-//import Cookie from "js-cookie"
 
 // Part1: Define Slice (including reducers and actions)
 const lightMode = true;
