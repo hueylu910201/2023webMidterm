@@ -11,7 +11,7 @@ import SetColorMode from "../SetColorMode"
 export default function Header({ title, products }) {
     const [isOnTouch, setIsOnTouch] = useState(false);
     const {
-        token: { colorHeader ,colorTextBase},
+        token: { colorHeader, colorTextBase },
     } = theme.useToken();
     const menu = (
         <Menu>
@@ -46,13 +46,16 @@ export default function Header({ title, products }) {
                         onClick={() => setIsOnTouch(!isOnTouch)}
                         isOnTouch={isOnTouch}
                     />
-                    <div className={styles.headerItem} style={{backgroundColor:colorHeader}}>
-                        <img
-                            alt="logo"
-                            className={styles.logo}
-                            src="\images\movielogo.png"
-                        />
-                        <span className={styles.logoName} style={{color:colorTextBase}}>影視快帝</span>
+                    <div className={styles.headerItem} style={{ backgroundColor: colorHeader }}>
+                        <Link to="/">
+                            <img
+                                alt="logo"
+                                className={styles.logo}
+                                src="\images\movielogo.png"
+                            />
+                        </Link>
+
+                        <span className={styles.logoName} style={{ color: colorTextBase }}>影視快帝</span>
                         <Link to="/">
                             <span className={styles.headerTitle}>
                                 首頁

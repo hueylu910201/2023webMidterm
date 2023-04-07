@@ -26,7 +26,7 @@ function Product() {
       >
          <div className="mainLayout">
             <Helmet>
-               <title>product</title>
+               <title>電影介紹</title>
                <style>{`
                body { 
                   background-color: ${colorBgBase}; 

@@ -2,9 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ConfigProvider } from 'antd';
 import { useSelector } from "react-redux";
 import { HelmetProvider } from 'react-helmet-async'
-import Home from './pages/Home'
-import NewHomePage from './pages/NewHomePage';
-import Product from './pages/Product';
 import { darkTheme, lightTheme } from './theme';
 import { selectLightMode } from "./redux/colorSLice";
 import AnimateRouter from './AnimateRouter';

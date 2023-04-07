@@ -15,7 +15,7 @@ export default function AddToCart({ product, qty }) {
     notification.open({
       message: 'Shopping Notification',
       description:
-        `已新增 ${qty}片 ${product.name} 到您的購物車!`,
+        `已新增 ${qty}部 ${product.name} 到您的購物車!`,
       placement: 'bottomRight'
     });
   };
