@@ -101,8 +101,8 @@ function ProductDetail({ product }) {
                </div>
             </Col>
             <Col
-               xs={{ span: 20 }}
-               sm={{ span: 12 }}
+               xs={{ span: 21 }}
+               sm={{ span: 10 }}
                lg={{ span: 8 }}
                xl={{ span: 8 }}
                xxl={{ span: 4 }}
