@@ -21,11 +21,11 @@ export default function Information() {
 
                 <div className={styles.textArea}>
                     <p className={styles.contentTitle} style={{color: colorTextBase}}>最新消息</p>
-                    <Link to="/"><h2>2023/01/01 防疫鬆綁須知</h2></Link>
-                    <Link to="/"><h2>2023/01/01 防詐騙聲明</h2></Link>
-                    <Link to="/"><h2>2023/01/01 防疫鬆綁須知</h2></Link>
-                    <Link to="/"><h2>2023/01/01 行動版支付功能上線</h2></Link>
-                    <Link to="/"><h2>2023/01/01 官方APP維護時間公告</h2></Link>
+                    <Link to="/"><h2>2023/03/25 賀!南港分店新開幕</h2></Link>
+                    <Link to="/"><h2>2023/03/20 最新!黑豹2藍光DVD上架了</h2></Link>
+                    <Link to="/"><h2>2023/03/19 行動支付功能上線</h2></Link>
+                    <Link to="/"><h2>2023/03/10 官網維護時間公告</h2></Link>
+                    <Link to="/"><h2>2023/02/10 新會員等級上路中</h2></Link>
                 </div>
 
 
@@ -52,11 +52,11 @@ export default function Information() {
 
                 <div className={styles.textArea}>
                     <p className={styles.contentTitle} style={{color: colorTextBase}}>優惠活動</p>
-                    <Link to="/"> <h2>2023/01/01 揪團看電影買四送一</h2></Link>
-                    <Link to="/"> <h2>2023/01/01 吉拿棒新口味八折優惠</h2></Link>
+                    <Link to="/"> <h2>2023/04/01 兒童節優惠 動畫片8折</h2></Link>
+                    <Link to="/"> <h2>2023/03/31 匯豐銀行刷卡滿額享79折</h2></Link>
                     <Link to="/"><h2>2023/01/01 6000元消費回饋好禮專區</h2></Link>
-                    <Link to="/"><h2>2023/01/01 情侶優惠活動</h2></Link>
-                    <Link to="/"> <h2>2023/01/01 2023會員優惠搶先看</h2></Link>
+                    <Link to="/"><h2>2023/03/25 普發6000元回饋專區</h2></Link>
+                    <Link to="/"> <h2>2023/01/31 新會員免費兌換一部電影</h2></Link>
                 </div>
 
             </Col>
