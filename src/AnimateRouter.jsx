@@ -5,7 +5,7 @@ import Product from './pages/Product';
 import { AnimatePresence } from 'framer-motion';
 
 function AnimateRouter() {
-    const location=useLocation();
+    const location = useLocation();
     return (
         //   <ConfigProvider theme={theme} >
         //     <HelmetProvider context={{}}>
@@ -29,6 +29,7 @@ function AnimateRouter() {
                     <Route path="category/:categoryName" element={<Home />} />
                     <Route path="id/:productId" element={<Product />} />
                 </Route>
+                <Route path="*" element={<h1>404 Not Found</h1>} />
             </Routes>
         </AnimatePresence>
 
