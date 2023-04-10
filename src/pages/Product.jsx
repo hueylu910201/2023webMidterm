@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { theme } from 'antd';
 import { Helmet } from "react-helmet-async"
 import Header from "../components/Header"
+import ScrollToTopButton from '../components/ScrollToTopButton';
 import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
 import products from "../json/products.json";
@@ -42,6 +43,7 @@ function Product() {
             <div className="layoutContent container">
                <ProductDetail product={product} />
             </div>
+            <ScrollToTopButton/>
             <Footer className="layoutFooter" />
          </div>
       </motion.div>

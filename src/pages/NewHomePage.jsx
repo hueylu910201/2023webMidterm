@@ -2,6 +2,7 @@ import Header from "../components/Header"
 import MyCarousel from "../components/MyCarousel";
 import ProductListRow from "../components/ProductListRow";
 import Information from "../components/Information";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import Footer from "../components/Footer";
 import movies from "../json/products.json";
 import { theme } from "antd";
@@ -28,6 +29,7 @@ export default function NewHomePage() {
                 <MyCarousel />
                 <ProductListRow movies={movies} />
                 <Information />
+                <ScrollToTopButton/>
                 <Footer />
             </div>
         </motion.div>

@@ -76,6 +76,13 @@ export default function BasketModal({ isOpen, toggleModal }) {
             總金額:
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
+         <div className={styles.noticeContainer} style={{borderColor:colorHeader}}>
+            <h3>注意事項</h3>
+            <p>1.每部電影出租後72小時內可無限次觀看，超時費用將另計。</p>
+            <p>2.請勿私自拷貝、轉售、側錄，違者可罰200萬新台幣整。</p>
+            <p>3.如有發現光碟磨損、無法觀看等人為損壞情形須照價賠償。</p>
+            <p>4.若光碟有破損導致無法觀看，請盡速向本公司聯繫做替換。</p>
+         </div>
          <Button
             className={styles.btn}
             type="primary"
