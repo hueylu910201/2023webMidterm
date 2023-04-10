@@ -7,7 +7,18 @@ import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
 import products from "../json/products.json";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
+function ScrollToTopOnMount() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function Product() {
    const {
@@ -25,6 +36,7 @@ function Product() {
          exit={{ opacity: 0, x: window.innerWidth }}
          transition={{ duration: 0.3, type: "spring" }}
       >
+         <ScrollToTopOnMount/>
          <div className="mainLayout">
             <Helmet>
                <title>電影介紹</title>

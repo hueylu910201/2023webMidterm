@@ -7,6 +7,19 @@ import Footer from "../components/Footer"
 import ProductList from "../components/ProductList";
 import products from "../json/products.json";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTopOnMount() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 
 function Home() {
   const {
@@ -30,6 +43,7 @@ function Home() {
       exit={{ opacity: 0, x: window.innerWidth }}
       transition={{ duration: 0.3, type: "spring" }}
     >
+      <ScrollToTopOnMount/>
       <div className="mainLayout" style={{ overflowX: 'hidden' }}>
         <Helmet>
           <title>{title}</title>
