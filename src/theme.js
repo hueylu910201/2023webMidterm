@@ -14,7 +14,7 @@ const darkTheme = {
     colorInformation:"#636363",
     colorList:"#3a3b3b",
     colorButtonTop:'#494c4d',
-    colorNotice:"#494c4d"
+    colorNotice:"#7a8082"
   },
   components: {
     Button: {
