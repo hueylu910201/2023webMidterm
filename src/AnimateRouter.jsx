@@ -1,6 +1,7 @@
 import { useLocation, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import NewHomePage from './pages/NewHomePage';
+import NotFoundPage from './pages/NotfonudPage';
 import Product from './pages/Product';
 import { AnimatePresence } from 'framer-motion';
 
@@ -29,7 +30,7 @@ function AnimateRouter() {
                     <Route path="category/:categoryName" element={<Home />} />
                     <Route path="id/:productId" element={<Product />} />
                 </Route>
-                <Route path="*" element={<h1>404 Not Found</h1>} />
+                <Route path="*" element={<NotFoundPage/>} />
             </Routes>
         </AnimatePresence>
 
