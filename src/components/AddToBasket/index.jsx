@@ -7,16 +7,19 @@ import { theme } from "antd";
 
 export default function AddToCart({ product, qty }) {
   const {
-    token: { colorHeader ,colorTextBase},
+    token: { colorHeader ,colorTextBase,colorNotice},
 } = theme.useToken();
   const dispatch = useDispatch();
 
   const openNotification = () => {
     notification.open({
-      message: '通知!',
       description:
         `已新增 ${qty}部 ${product.name} 到您的購物車!`,
-      placement: 'bottomRight'
+      placement: 'bottomRight',
+      style: {
+        backgroundColor: colorNotice,
+        color:colorTextBase
+      },
     });
   };
 
