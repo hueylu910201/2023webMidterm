@@ -5,7 +5,7 @@ import styles from "../ScrollToTopButton/ScrollToTopButton.module.css"
 function ScrollToTopButton() {
 
     const {
-        token: { colorButtonTop },
+        token: { colorButtonTop ,colorTextBase},
     } = theme.useToken();
     const [isVisible, setIsVisible] = useState(false);
 
@@ -36,8 +36,8 @@ function ScrollToTopButton() {
             onClick={handleClick}
             style={{ display: isVisible ? 'block' : 'none', backgroundColor: colorButtonTop }}
             className={styles.button}
-        >
-            Top
+        >   
+            <a style={{color:colorTextBase}}>Top</a>
         </button>
     );
 }
