@@ -8,7 +8,7 @@
      'copyRight copyRight copyRight'
    ;
    grid-template-rows: auto 3rem;
-   grid-template-columns: 3fr 1fr minmax(4rem, 1fr) minmax(4rem, 1fr);
+   grid-template-columns: 3fr  minmax(4rem, 1fr) minmax(4rem, 1fr) 1fr;
    gap: 1em;
    overflow: hidden;
 }
@@ -86,4 +86,11 @@
    .content p{
       font-size: 1.5rem;
    }
+}
+
+@media(max-width:465px){
+   .contactUS p{
+      font-size: 0.8rem;
+   }
+
 }

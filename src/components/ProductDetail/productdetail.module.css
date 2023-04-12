@@ -65,6 +65,14 @@
       justify-content: center;
    }
 
+}
+
+@media(max-width:480px){
    .playerWrapper {
+      width: 20rem;
+      height: 10rem;
+   }
+
+   .container{
    }
 }
