@@ -6,6 +6,11 @@ import Router from './Router';
 import MoonLoader from "react-spinners/MoonLoader";
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+// const queryClient = new QueryClient();
+import { feedProducts } from './api';
+feedProducts();
+
 
 function App() {
   const [loading, setLoading] = useState(false);
