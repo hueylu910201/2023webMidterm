@@ -9,6 +9,11 @@ import { theme } from "antd";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async"
 import { useEffect } from "react";
+import { useProductById ,useProducts} from "../react-query";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { getProducts } from "../api";
+
 import { useLocation } from "react-router-dom";
 
 function ScrollToTopOnMount() {
@@ -26,6 +31,28 @@ export default function NewHomePage() {
     const {
         token: { colorList },
     } = theme.useToken();
+    // const {productId}=useParams();;
+    // const { data, isLoading } = useProductById(productId);
+    // const movies = data || [];
+    // const { data: movies, isLoading, error } = useQuery("/", getProducts);
+
+    // if (isLoading) {
+    //   return <div>Loading...</div>;
+    // }
+  
+    // if (error) {
+    //   return <div>Error: {error.message}</div>;
+    // }
+
+
+    const { categoryName } = useParams();
+    const category = !categoryName
+      ? "/"
+      : categoryName.toUpperCase()
+      ;
+  
+    const { data, isLoading } = useProducts(category);
+    const movies = data || [];
     return (
         <motion.div
             initial={{ opacity: 0, x: -200, y: 0 }}
@@ -40,7 +67,7 @@ export default function NewHomePage() {
                 </Helmet>
                 <Header />
                 <MyCarousel />
-                <ProductListRow movies={movies} />
+                <ProductListRow movies={movies} isLoading={isLoading} active/>
                 <Information />
                 <ScrollToTopButton/>
                 <Footer />

@@ -1,11 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { theme } from 'antd';
 import { Helmet } from "react-helmet-async"
-import ScrollToTopButton from '../components/ScrollToTopButton'; 
+import ScrollToTopButton from '../components/ScrollToTopButton';
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import ProductList from "../components/ProductList";
-import products from "../json/products.json";
+// import products from "../json/products.json";
+import { useProducts } from '../react-query';
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -26,15 +27,17 @@ function Home() {
     token: { colorBgBase, colorTextBase, fontFamily },
   } = theme.useToken();
   const { categoryName } = useParams();
-  const _products = !categoryName
-    ? products
-    : products.filter(
-      x => x?.category.toUpperCase() === categoryName.toUpperCase()
-    );
+  const category = !categoryName
+    ? "/"
+    : categoryName.toUpperCase()
+    ;
+
+  const { data, isLoading } = useProducts(category);
+  const products = data || [];
 
   const title = !categoryName
     ? "電影清單"
-    : _products[0]?.category;
+    : products[0]?.category;
 
   return (
     <motion.div
@@ -43,7 +46,7 @@ function Home() {
       exit={{ opacity: 0, x: window.innerWidth }}
       transition={{ duration: 0.3, type: "spring" }}
     >
-      <ScrollToTopOnMount/>
+      <ScrollToTopOnMount />
       <div className="mainLayout" style={{ overflowX: 'hidden' }}>
         <Helmet>
           <title>{title}</title>
@@ -60,14 +63,14 @@ function Home() {
           className="layoutHeader"
           title={title}
           slogan="An example made by Vite."
-          products={_products}
+          products={products}
         />
         <div className="layoutCOntent container">
-          <ProductList products={_products} />
+          <ProductList products={products} isLoading={isLoading} />
         </div>
         <Footer className="layoutFooter" />
       </div>
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </motion.div>
 
 

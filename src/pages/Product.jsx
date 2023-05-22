@@ -6,6 +6,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton';
 import Footer from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
 import products from "../json/products.json";
+import { useProductById } from '../react-query';
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -25,9 +26,11 @@ function Product() {
       token: { colorBgBase, colorTextBase },
    } = theme.useToken();
    const { productId } = useParams();
-   const product = products.find(
-      (x) => x.id === productId
-   );
+   const { data, isLoading } = useProductById(productId);
+   const product = data || {};
+   // const product = products.find(
+   //    (x) => x.id === productId
+   // );
 
    return (
       <motion.div
@@ -53,7 +56,7 @@ function Product() {
                slogan="An example made by Vite."
             />
             <div className="layoutContent container">
-               <ProductDetail product={product} />
+            <ProductDetail product={product}  isLoading={isLoading} />
             </div>
             <ScrollToTopButton/>
             <Footer className="layoutFooter" />

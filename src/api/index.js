@@ -1,5 +1,5 @@
 import { getApps, getApp, initializeApp } from "firebase/app";
-import { getFirestore , collection , setDoc , getDocs , doc , deleteDoc } from "firebase/firestore";
+import { getFirestore , collection , setDoc , getDocs , doc , deleteDoc ,getDoc ,query, where } from "firebase/firestore";
 import products from "../json/products.json";
 
 const firebaseConfig = {
@@ -21,17 +21,44 @@ const app = app_length ? getApp() : initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // REFERENCE COLLECTION
-const imagesCollection = collection(db, "movies"); 
+const productsCollection = collection(db, "movies"); 
 
 export const feedProducts = async () => {
   // DELETE ALL EXISTING DOCS
-  const querySnapshot = await getDocs(imagesCollection);
+  const querySnapshot = await getDocs(productsCollection);
   querySnapshot.forEach(async (products) => {
     await deleteDoc(doc(db, "movies", products.id));
   });
   // ADD NEW DOCS
   products.forEach(async (products) => {
-    const docRef = await doc(imagesCollection);
+    const docRef = await doc(productsCollection);
     await setDoc(docRef, { ...products, id: docRef.id });
   });
+};
+
+export const getProductById = async ({ queryKey }) => {
+  const [id] = queryKey;
+  const docRef = await doc(db, "movies", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+};
+
+export const getProducts = async ({ queryKey }) => {
+  const [category] = queryKey;
+  let querySnapshot;
+  if (category == "/") querySnapshot = await getDocs(productsCollection);
+  else {
+    const q = await query(
+      productsCollection,
+      where("category", "==", category.toUpperCase())
+    );
+    querySnapshot = await getDocs(q);
+  }
+  // Convert the query to a json array.
+  let result = [];
+  querySnapshot.forEach(async (products) => {
+    await result.push(products.data());
+  });
+  console.log({ result });
+  return result;
 };
