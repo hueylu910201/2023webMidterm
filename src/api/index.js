@@ -1,5 +1,12 @@
 import { getApps, getApp, initializeApp } from "firebase/app";
 import { getFirestore , collection , setDoc , getDocs , doc , deleteDoc ,getDoc ,query, where } from "firebase/firestore";
+import { 
+  getAuth, signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword,
+  initializeAuth,
+  signOut,
+  updateProfile,
+} from 'firebase/auth';
 import products from "../json/products.json";
 
 const firebaseConfig = {
@@ -19,6 +26,9 @@ const app = app_length ? getApp() : initializeApp(firebaseConfig);
 
 // REFERENCE DB
 const db = getFirestore(app);
+
+// REFERENCE AUTH
+const auth = app_length ? getAuth(app) : initializeAuth(app);
 
 // REFERENCE COLLECTION
 const productsCollection = collection(db, "movies"); 
@@ -62,3 +72,28 @@ export const getProducts = async ({ queryKey }) => {
   console.log({ result });
   return result;
 };
+
+export const login = async ({ email, password }) => {
+  signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+};
+
+export const register = async ({ name, email, password }) => {
+  const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+  const user = userCredential?.user;
+  const docRef = doc(db, "users", user.uid);
+  setDoc(docRef, {
+    name,
+  });
+};
+
+export const logout = async () => {
+  auth.signOut();
+}

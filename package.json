@@ -15,6 +15,7 @@
     "antd": "^5.1.5",
     "firebase": "^9.22.0",
     "framer-motion": "^10.11.2",
+    "js-cookie": "^3.0.5",
     "module-name": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

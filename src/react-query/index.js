@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
-import { getProductById, getProducts } from "../api";
+import { useQuery , useMutation } from '@tanstack/react-query'
+import { getProductById, getProducts , login , register } from "../api";
 
 export const useProducts = (category) => {
     const { data, isLoading } = useQuery([category], getProducts, {
@@ -14,3 +14,11 @@ export const useProductById = (productId) => {
     const { data, isLoading } = useQuery([productId], getProductById)
     return { data, isLoading };
 }
+
+export const useSignInWithEmailPassword = () => {
+    return useMutation(login);
+  };
+  
+  export const useRegisterWithEmailPassword = () => {
+    return useMutation(register);
+  };

@@ -6,6 +6,7 @@ import NavBar from "../NavBar";
 import styles from "./header.module.css";
 import HamburgerMenu from "../HamburgerMenu"
 import CartSummary from "../CartSummary";
+import UserInfo from "../UserInfo";
 import SetColorMode from "../SetColorMode"
 
 export default function Header({ title, products }) {
@@ -41,7 +42,7 @@ export default function Header({ title, products }) {
                     className={styles.logo2}
                     src="\images\movielogo.png"
                 /> */}
-                <div className={styles.headerWwrap}>
+                <div className={styles.headerwrap}>
                     <HamburgerMenu
                         onClick={() => setIsOnTouch(!isOnTouch)}
                         isOnTouch={isOnTouch}
@@ -79,12 +80,14 @@ export default function Header({ title, products }) {
                         <div className={styles.iconWrap}>
                             <SetColorMode />
                             <CartSummary />
+                            <UserInfo/>
                         </div>
                     </div>
                 </div>
                 <div className={styles.iconWrap2}>
                     <SetColorMode />
                     <CartSummary />
+                    <UserInfo/>
                 </div>
                 <h1 className={styles.categortTitle}>
                     {title}
