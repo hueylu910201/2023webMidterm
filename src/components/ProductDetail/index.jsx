@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { Row, Col, Select } from "antd";
 import { useSearchParams } from 'react-router-dom';
 import AddToBasket from "../AddToBasket"
+import CommentSection from "../CommentSection";
 import styles from "./productdetail.module.css"
 const { Option } = Select;
 
@@ -116,7 +117,18 @@ function ProductDetail({ product }) {
                   />
                </div>
             </Col>
+            <Col              
+               xs={{ span: 21 }}
+               sm={{ span: 10 }}
+               lg={{ span: 8 }}
+               xl={{ span: 8 }}
+               xxl={{ span: 4 }}
+               justifyContent='center'>
+               <CommentSection/>
+            </Col>
+
          </Row>
+
       </div>
 
    );

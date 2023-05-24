@@ -147,3 +147,19 @@ export const logout = async () => {
   await auth.signOut();
   localStorage.removeItem("user");
 }
+
+export const addCommentToProduct = async ({ productId, userId, comment }) => {
+  const docRef = doc(db, "movies", productId);
+  const docSnap = await getDoc(docRef);
+  const product = docSnap.data();
+  const comments = product.comments || [];
+  const newComment = { userId, comment };
+  comments.push(newComment);
+  await updateDoc(docRef, { comments });
+};
+
+export const fetchComments = async (productId) => {
+  const response = await fetch(`/api/products/${productId}/comments`);
+  const data = await response.json();
+  return data;
+};

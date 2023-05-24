@@ -1,0 +1,19 @@
+.commentForm {
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30rem;
+}
+
+.commentForm__button {
+    /* margin-left: 2rem; */
+    margin-top: 0.5rem;
+    width: 70%;
+}
+
+.input{
+    width: 15rem;
+    height: 5rem;
+    direction: rtl;
+    text-align: left;
+}

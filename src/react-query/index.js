@@ -6,6 +6,7 @@ import {
     register,
     getUserInfo,
     updateUserInfo,
+    addCommentToProduct,
     logout,
   } from "../api";
 
@@ -67,3 +68,11 @@ export const useUserInfo = () => {
     });
   };
   
+  export const useAddCommentToProduct = () => {
+    const queryClient = useQueryClient();
+    return useMutation(addCommentToProduct, {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["comments"]);
+      },
+    });
+  };
