@@ -7,6 +7,7 @@ import styles from "./header.module.css";
 import HamburgerMenu from "../HamburgerMenu"
 import CartSummary from "../CartSummary";
 import UserInfo from "../UserInfo";
+import Favorite from "../Favorite";
 import SetColorMode from "../SetColorMode"
 
 export default function Header({ title, products }) {
@@ -69,12 +70,7 @@ export default function Header({ title, products }) {
                         </Link>
                         <Link to="/">
                             <span className={styles.headerTitle}>
-                                登入
-                            </span>
-                        </Link>
-                        <Link to="/">
-                            <span className={styles.headerTitle}>
-                                註冊
+                                登入/註冊
                             </span>
                         </Link>
                         <div className={styles.iconWrap}>

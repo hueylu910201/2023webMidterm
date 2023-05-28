@@ -15,7 +15,7 @@ function Login() {
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>login</title>
+            <title>登入</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -25,7 +25,7 @@ function Login() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="Login"
+            title="登入"
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">

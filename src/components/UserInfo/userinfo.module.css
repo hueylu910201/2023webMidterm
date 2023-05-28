@@ -19,8 +19,15 @@
   }
 
   .userInfoOutlined {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     font-size: 1.8rem;
     padding-left: 0.2rem;
+  }
+}
+
+@media(max-width:768px){
+  .userInfo {
+    margin-top: -0.4rem;
+
   }
 }

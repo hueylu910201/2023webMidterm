@@ -34,7 +34,7 @@ const RegisterCard = ({ redirect }) => {
     >
       <Form.Item
         name="name"
-        label="Your Name"
+        label="姓名:"
         tooltip="What do you want others to call you?"
         rules={[
           {
@@ -48,7 +48,7 @@ const RegisterCard = ({ redirect }) => {
       </Form.Item>
       <Form.Item
         name="email"
-        label="E-mail"
+        label="你的信箱"
         rules={[
           {
             type: "email",
@@ -65,7 +65,7 @@ const RegisterCard = ({ redirect }) => {
 
       <Form.Item
         name="password"
-        label="Password"
+        label="輸入密碼"
         rules={[
           {
             required: true,
@@ -79,7 +79,7 @@ const RegisterCard = ({ redirect }) => {
 
       <Form.Item
         name="rePassword"
-        label="Re-enter Password"
+        label="確認密碼"
         dependencies={["password"]}
         hasFeedback
         rules={[
@@ -116,7 +116,7 @@ const RegisterCard = ({ redirect }) => {
         ]}
       >
         <Checkbox>
-          I have read the <Link to={"/"}>agreement</Link>
+          已閱讀過<Link to={"/"}>同意條款</Link>
         </Checkbox>
       </Form.Item>
       <Form.Item>
@@ -127,7 +127,7 @@ const RegisterCard = ({ redirect }) => {
             htmlType="submit"
             loading
           >
-            Create your account
+            註冊帳號
           </Button>
         ) : (
           <Button
@@ -135,18 +135,18 @@ const RegisterCard = ({ redirect }) => {
             className={styles.loginForm__button}
             htmlType="submit"
           >
-            Create your account
+            註冊帳號
           </Button>
         )}
-        Already have an account?{" "}
-        <Link to={`/auth/login?redirect=${redirect}`}>Login</Link>
+        已經有帳號了?{" "}
+        <Link to={`/auth/login?redirect=${redirect}`}>請登入</Link>
         {!isError ? (
           <div></div>
         ) : (
           <div className={styles.loginForm__errorWrap}>
             <h3 className={styles.loginForm__errorTitle}>
               <WarningOutlined  />
-              {"  "}There was a problem
+              {"  "}註冊失敗!
             </h3>
             <p className={styles.loginForm__errorMessage}>{error.message}</p>
           </div>

@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { theme } from 'antd';
 import styles from "../ScrollToTopButton/ScrollToTopButton.module.css"
 
+function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
+  }
+
 function ScrollToTopButton() {
 
     const {
@@ -10,7 +14,27 @@ function ScrollToTopButton() {
     const [isVisible, setIsVisible] = useState(false);
 
     const handleClick = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const duration = 800; // 滚动的总时间，单位为毫秒
+        const start = window.scrollY;
+        const startTime = performance.now();
+      
+        const animateScroll = (timestamp) => {
+          const currentTime = timestamp - startTime;
+          const scrollProgress = currentTime / duration;
+      
+          if (currentTime >= duration) {
+            window.scrollTo(0, 0);
+            return;
+          }
+      
+          const easeProgress = easeOutQuart(scrollProgress);
+          const scrollDistance = start * (1 - easeProgress);
+      
+          window.scrollTo(0, scrollDistance);
+          requestAnimationFrame(animateScroll);
+        };
+      
+        requestAnimationFrame(animateScroll);
     };
 
     useEffect(() => {
@@ -37,7 +61,7 @@ function ScrollToTopButton() {
             style={{ display: isVisible ? 'block' : 'none', backgroundColor: colorButtonTop }}
             className={styles.button}
         >   
-            <a style={{color:colorTextBase}}>Top</a>
+            <a style={{color:colorTextBase}}>▲</a>
         </button>
     );
 }

@@ -1,5 +1,24 @@
 import styles from "./icons.module.css"
 
+export function FavoriteIcon({ color }) {
+   return (
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 32 32"
+       className={styles.headerIcon}
+     >
+       <path
+         d="M13 13l7.071-6.317a5.866 5.866 0 018.225 0 5.7 5.7 0 010 8.127L15.959 27 3.7 14.81a5.7 5.7 0 010-8.127 5.866 5.866 0 018.225 0S16.582 10.533 19 13"
+         fill="none"
+         stroke={color}
+         strokeLinecap="square"
+         strokeMiterlimit="10"
+         strokeWidth="2"
+       ></path>
+     </svg>
+   );
+ }
+
 export function CartIcon({ color }) {
    return (
       <svg

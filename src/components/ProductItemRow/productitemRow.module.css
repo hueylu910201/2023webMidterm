@@ -1,3 +1,4 @@
+
 .item {
    border-radius: 3%;
    padding: 0;
@@ -21,7 +22,12 @@
    font-family: 'FakePearl-Regular',sans-serif;
 }
 
-
+.cover{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 38rem; 
+}
 
 .during {
    opacity: 0.7;
@@ -33,9 +39,30 @@
    display: flex;
 }
 
+@media(max-width:520px){
+   .cover{
+      transform: scaleY(0.7);
+   }
+}
+
+@media(max-width:730px){
+   .container{
+      transform: scaleY(0.8);
+   }
+}
+
 @media(max-width:768px){
    .item{
       height: 85%;
       margin-top: 2rem;
+   }
+}
+
+@media(max-width:992px){
+   .cover{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40rem; 
    }
 }

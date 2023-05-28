@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactPlayer from 'react-player'
 import { Row, Col, Select } from "antd";
+import { motion } from "framer-motion";
 import { useSearchParams } from 'react-router-dom';
 import AddToBasket from "../AddToBasket"
 import CommentSection from "../CommentSection";
@@ -9,6 +10,8 @@ const { Option } = Select;
 
 function ProductDetail({ product }) {
    const [searchParams] = useSearchParams();
+   const String = product.description_long;
+   const [descriptionLines, setDescriptionLines] = useState([]);
    const qtyFromBasket = searchParams.get('qtyFromBasket');
    const initQty = !!qtyFromBasket ? Number(qtyFromBasket) : product.countInStock > 0 ? 1 : 0
    const [qty, setQty] = useState(initQty);
@@ -17,6 +20,35 @@ function ProductDetail({ product }) {
       setQty(initQty)
    }, [initQty])
 
+   useEffect(() => {
+      if (typeof product.description_long === 'string') {
+         const lines = product.description_long.split("\n");
+         setDescriptionLines(lines);
+      }
+   }, [product.description_long]);
+
+
+   const typingContainer = {
+      hidden: { opacity: 0 },
+      show: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.14,
+         }
+      }
+   }
+
+   const typingText = {
+      hidden: { opacity: 0, y: "-20px" },
+      show: {
+         opacity: 1,
+         y: "0",
+         transition: {
+            ease: 'easeIn',
+         }
+      }
+   }
+
    return (
       <div className={styles.container}>
          <Row gutter={[32, 32]}
@@ -24,7 +56,9 @@ function ProductDetail({ product }) {
          >
             <Col
                xs={{ span: 24 }}
-               lg={{ span: 6 }}
+               lg={{ span: 8 }}
+               xl={{ span: 6 }}
+               justifyContent='center'
             >
                <img
                   alt={product.name}
@@ -34,22 +68,29 @@ function ProductDetail({ product }) {
             </Col>
             <Col
                xs={{ span: 24 }}
-               lg={{ span: 14 }}
+               lg={{ span: 12 }}
+               justifyContent='start'
             >
-               <h2 className={styles.category} >
-                  {product.category}
-               </h2>
-               <h1 className={styles.name} >
-                  {product.name}
-               </h1>
-               <h1 className={styles.name} >
-                  {product.eng_name}
-               </h1>
-               <h2>劇情簡介:</h2>
-               <p className={styles.description}>
-                  {product.description_long}
-               </p>
+               {/* <div className={styles.info} >
+
+
+               </div> */}
                <div className={styles.wrap}>
+                  <h1 className={styles.name} >
+                     {product.name}
+                  </h1>
+                  <h1 className={styles.name} >
+                     {product.eng_name}
+                  </h1>
+                  <h3 className={styles.during} >
+                     時長:{product.during}
+                  </h3>
+                  <h2 className={styles.director} >
+                     導演:{product.director}
+                  </h2>
+                  <h2 className={styles.actor} >
+                     演員:{product.actor}
+                  </h2>
                   <p className={styles.price} >
                      NT${product.price}.00
                   </p>
@@ -71,61 +112,53 @@ function ProductDetail({ product }) {
                         ))}
                      </Select>
                   </div>
-                  <p className={styles.qty}>
-                     總價: {product.price * qty}
-                  </p>
-                  <AddToBasket product={product} qty={qty} />
                </div>
+               <AddToBasket product={product} qty={qty} />
             </Col>
             <Col
                xs={{ span: 24 }}
-               lg={{ span: 12 }}
-               justifyContent='start'
+               lg={{ span: 18 }}
             >
-               <div className={styles.info} >
+               <motion.div initial={{opacity:0}} whileInView={{ opacity: 1 }} style={{marginTop:'4rem'}}>
+                  <motion.h2
+                     variants={typingContainer} initial="hidden" animate="show" 
+                  >  劇情簡介:{
+                        descriptionLines.map((line, i) => (
+                           <motion.p className={styles.description} key={i} variants={typingText}>
+                              {line}
+                           </motion.p>
+                        ))
+                     }
+                  </motion.h2>
+               </motion.div>
 
-                  <h1 className={styles.name} >
-                     {product.name}
-                  </h1>
-                  <h1 className={styles.name} >
-                     {product.eng_name}
-                  </h1>
-                  <h3 className={styles.during} >
-                     時長:{product.during}
-                  </h3>
-                  <h2 className={styles.director} >
-                     導演:{product.director}
-                  </h2>
-                  <h2 className={styles.actor} >
-                     演員:{product.actor}
-                  </h2>
-               </div>
             </Col>
             <Col
-               xs={{ span: 21 }}
-               sm={{ span: 10 }}
-               lg={{ span: 8 }}
-               xl={{ span: 8 }}
-               xxl={{ span: 4 }}
+               xs={{ span: 24 }}
+               lg={{ span: 18 }}
                justifyContent='center'
             >
-               <div className={styles.playerWrapper}>
-                  <ReactPlayer
-                     url={product.url}
-                     width='100%'
-                     height='100%'
-                  />
-               </div>
+               <Row justify='center'>
+                  <Col md={{ span: 24 }} lg={{ span: 24 }} justifyContent='center'>
+                     <div className={styles.playerWrapper}>
+                        <ReactPlayer
+                           url={product.url}
+                           width='100%'
+                           height='100%'
+                        />
+                     </div>
+                  </Col>
+               </Row>
             </Col>
-            <Col              
+            {/* <Col              
                xs={{ span: 21 }}
                sm={{ span: 10 }}
                lg={{ span: 8 }}
                xl={{ span: 8 }}
                xxl={{ span: 4 }}
                justifyContent='center'>
-               <CommentSection/>
-            </Col>
+               <CommentSection productId={product}/>
+            </Col> */}
 
          </Row>
 

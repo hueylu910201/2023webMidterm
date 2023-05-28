@@ -53,7 +53,7 @@ const LoginCard = ({ redirect }) => {
          >
             <Input
                prefix={<MailOutlined />}
-               placeholder="E-Mail"
+               placeholder="輸入信箱"
             />
          </Form.Item>
          <Form.Item
@@ -69,16 +69,16 @@ const LoginCard = ({ redirect }) => {
             <Input.Password
                prefix={<LockOutlined />}
                type="password"
-               placeholder="Password"
+               placeholder="輸入密碼"
             />
          </Form.Item>
          <Form.Item>
             <Link className={styles.loginForm__forgot} to={"/"}>
-               Forgot password
+               忘記密碼
             </Link>
             <Form.Item name="remember" valuePropName="checked" noStyle>
-               <Checkbox onChange={() => setIsRemember(!isRemember)} checked={isRemember}>
-                  Remember me
+               <Checkbox onChange={() => setIsRemember(!isRemember)} checked={isRemember} style={{marginLeft:'1rem'}}>
+                  記住我
                </Checkbox>
             </Form.Item>
          </Form.Item>
@@ -91,7 +91,7 @@ const LoginCard = ({ redirect }) => {
                   className={styles.loginForm__button}
                   loading
                >
-                  Log in
+                  登入
                </Button>
             ) : (
                <Button
@@ -99,17 +99,20 @@ const LoginCard = ({ redirect }) => {
                   htmlType="submit"
                   className={styles.loginForm__button}
                >
-                  Log in
+                  登入
                </Button>
             )}
-            Or <Link to={`/auth/register?redirect=${redirect}`}>register now!</Link>
+            <div style={{marginTop:'0.5rem'}}>
+            <Link to={`/auth/register?redirect=${redirect}`} >立即註冊帳號</Link>
+            </div>
+            
             {!isError ? (
                <div></div>
             ) : (
                <div className={styles.loginForm__errorWrap}>
                   <h3 className={styles.loginForm__errorTitle}>
                      <WarningOutlined />
-                     {"  "}There was a problem
+                     {"  "}帳號或密碼輸入錯誤!
                   </h3>
                   <p className={styles.loginForm__errorMessage}>{error.message}</p>
                </div>

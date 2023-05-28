@@ -6,7 +6,8 @@ import {
     register,
     getUserInfo,
     updateUserInfo,
-    addCommentToProduct,
+    toggleFavoriteProduct,
+    addComment,
     logout,
   } from "../api";
 
@@ -23,6 +24,15 @@ export const useProductById = (productId) => {
     const { data, isLoading } = useQuery([productId], getProductById)
     return { data, isLoading };
 }
+
+export const useToggleFavoriteProduct = () => {
+    const queryClient = useQueryClient();
+    return useMutation(toggleFavoriteProduct, {
+      onSuccess: (data) => {
+        queryClient.invalidateQueries(["uid"]);
+      },
+    });
+  };
 
 export const useUserInfo = () => {
     return useQuery({
@@ -68,11 +78,13 @@ export const useUserInfo = () => {
     });
   };
   
-  export const useAddCommentToProduct = () => {
+  export const useAddComment = () => {
     const queryClient = useQueryClient();
-    return useMutation(addCommentToProduct, {
+    return useMutation(addComment, {
       onSuccess: () => {
-        queryClient.invalidateQueries(["comments"]);
+        queryClient.invalidateQueries("comments");
       },
     });
   };
+
+

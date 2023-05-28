@@ -9,9 +9,9 @@ const darkTheme = {
     fontFamily:'FakePearl-Regular',
     colorTextFooter: "#ffffff",
     fontWeight:"900",
-    colorBgFooter: "#000000",
-    colorHeader:"#494c4d",
-    colorInformation:"#636363",
+    colorBgFooter: "#04101c",
+    colorHeader:"#04101c",
+    colorInformation:"#2e2d2d",
     colorList:"#3a3b3b",
     colorButtonTop:'#494c4d',
     colorNotice:"#7a8082"

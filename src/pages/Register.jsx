@@ -12,7 +12,7 @@ function Register() {
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>register</title>
+            <title>註冊帳號</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -22,7 +22,7 @@ function Register() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="Register"
+            title="註冊帳號"
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">

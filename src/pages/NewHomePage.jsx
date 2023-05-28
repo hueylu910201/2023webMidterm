@@ -65,7 +65,7 @@ export default function NewHomePage() {
                 <Helmet>
                     <title>影視快帝</title>
                 </Helmet>
-                <Header />
+                <Header  className="layoutHeader"/>
                 <MyCarousel />
                 <ProductListRow movies={movies} isLoading={isLoading} active/>
                 <Information />

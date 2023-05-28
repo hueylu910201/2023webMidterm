@@ -1,8 +1,8 @@
-.porductList {
+/* .porductList {
     margin-top: 2rem;
     scroll-behavior: smooth;
     overflow-x: hidden;
-}
+} */
 
 .row {
     display: flex;
@@ -10,28 +10,32 @@
 }
 
 .arrowContainer {
-    position: "relative";
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .left {
-    position: "absolute";
     margin: 0 5px;
     left: 0;
     height: 50px;
     width: 50px;
     border-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
-    position: "absolute";
     margin: 0 5px;
-    right: 0;
+    right: -30px;
     height: 50px;
     width: 50px;
     border-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title{
@@ -39,6 +43,7 @@
     font-weight: bold;
     font-family: 'FakePearl-Regular',sans-serif;
     display: flex;
+    justify-content: center;
     margin: 1rem;
     margin-left: 3rem;
     align-items: center;
@@ -70,6 +75,28 @@
 
     .title{
         justify-content: center;
-        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media(max-width:723px){
+    .title{
+        justify-content: center;
+        margin-bottom: -9%;
+    }
+}
+
+
+@media(max-width:450px){
+    .title{
+        justify-content: center;
+        margin-bottom: -14%;
+    }
+}
+
+@media(max-width:391px){
+    .title{
+        justify-content: center;
+        margin-bottom: -16%;
     }
 }
