@@ -22,9 +22,13 @@
 }
 
 .image {
-  max-width: 4rem;
-  max-height: 4rem;
+  width: 5rem;
+  height: 7rem;
   flex: 1 1;
+}
+
+.name{
+  font-size: 1.2rem;
 }
 
 .content {
@@ -32,8 +36,12 @@
   flex: 8 1;
 }
 
+.qty{
+  width:25%;
+}
+
 .price {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: right;
 }
@@ -47,6 +55,7 @@
 
 .wrap {
   display: flex;
+  font-size: 1.2rem;
   justify-content: space-between;
 }
 

@@ -14,7 +14,10 @@ const darkTheme = {
     colorInformation:"#2e2d2d",
     colorList:"#3a3b3b",
     colorButtonTop:'#494c4d',
-    colorNotice:"#7a8082"
+    colorNotice:"#7a8082",
+    colorLogin:"#b0b0b0",
+    colorCardBg:"#353a3d",
+    colorButtonText:"#ffffff"
   },
   components: {
     Button: {
@@ -34,7 +37,10 @@ const lightTheme = {
     colorInformation:'#a7e3ff',
     colorList:'#ffffff',
     colorButtonTop:'#d4f3ff',
-    colorNotice:"#ffffff"
+    colorNotice:"#ffffff",
+    colorLogin:"#0073ba",
+    colorCardBg:"#edf8ff",
+    colorButtonText:"#48606e"
   },
   components: {
     Button: {

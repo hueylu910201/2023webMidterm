@@ -41,11 +41,7 @@ export default function NavBar({ open, onClose, title }) {
             </Menu>
             <NavLink to="/"
                 className={styles.navItem}>
-                登入
-            </NavLink>
-            <NavLink to="/"
-                className={styles.navItem}>
-                註冊
+                關於我們
             </NavLink>
 
             {/* <NavLink to="/products/category/動畫"

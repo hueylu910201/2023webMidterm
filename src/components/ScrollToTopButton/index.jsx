@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { theme } from 'antd';
+import { VerticalAlignTopOutlined } from '@ant-design/icons';
 import styles from "../ScrollToTopButton/ScrollToTopButton.module.css"
 
 function easeOutQuart(t) {
@@ -61,7 +62,7 @@ function ScrollToTopButton() {
             style={{ display: isVisible ? 'block' : 'none', backgroundColor: colorButtonTop }}
             className={styles.button}
         >   
-            <a style={{color:colorTextBase}}>▲</a>
+            <VerticalAlignTopOutlined style={{color:colorTextBase}}/>
         </button>
     );
 }

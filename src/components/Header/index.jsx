@@ -69,9 +69,7 @@ export default function Header({ title, products }) {
                             </Dropdown>
                         </Link>
                         <Link to="/">
-                            <span className={styles.headerTitle}>
-                                登入/註冊
-                            </span>
+                        <span className={styles.headerTitle}>關於我們</span>
                         </Link>
                         <div className={styles.iconWrap}>
                             <SetColorMode />

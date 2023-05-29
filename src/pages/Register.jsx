@@ -22,7 +22,7 @@ function Register() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="註冊帳號"
+            title=" "
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">

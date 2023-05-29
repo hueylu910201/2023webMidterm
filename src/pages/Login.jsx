@@ -25,7 +25,7 @@ function Login() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="登入"
+            title=" "
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">

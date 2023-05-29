@@ -9,7 +9,7 @@ import { selectCartItems } from "../../redux/cartSlice";
 const { Option } = Select;
 
 export default function BasketModal({ isOpen, toggleModal }) {
-   const { token: { colorHeader} } = theme.useToken();
+   const { token: { colorHeader } } = theme.useToken();
 
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
@@ -34,7 +34,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             cartItems.map(item => (
                <li key={item.id} className={styles.item}>
                   <Link to={`/products/id/${item.id}?qtyFromBasket=${item.qty}`}>
-                     <div onClick={handleCancel}>
+                     <div onClick={handleCancel} style={{ scale: '1.1' }}>
                         <img className={styles.image} src={item.image} alt={item.name} />
                      </div>
                   </Link>
@@ -43,6 +43,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
                      <div>
                         數量: {"   "}
                         <Select
+                           className={styles.qty}
                            defaultValue={item.qty}
                            onChange={(qty) => dispatch(addCartItems({
                               id: item.id,
@@ -73,10 +74,10 @@ export default function BasketModal({ isOpen, toggleModal }) {
             ))
          )}
          <div className={styles.wrap}>
-            總金額:
+            <p>總金額:</p>
             <div className={styles.totalPrice}>${getTotalPrice()}</div>
          </div>
-         <div className={styles.noticeContainer} style={{borderColor:colorHeader}}>
+         <div className={styles.noticeContainer} style={{ borderColor: colorHeader }}>
             <h3>注意事項</h3>
             <p>1.每部電影出租後72小時內可無限次觀看，超時費用將另計。</p>
             <p>2.請勿私自拷貝、轉售、側錄，違者可罰200萬新台幣整。</p>
@@ -86,7 +87,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
          <Button
             className={styles.btn}
             type="primary"
-            style={{backgroundColor:colorHeader}}
+            style={{ backgroundColor: colorHeader }}
          >
             <CartIcon color={"#ffffff"} />
             <span style={{ marginLeft: 12 }}>結帳</span>

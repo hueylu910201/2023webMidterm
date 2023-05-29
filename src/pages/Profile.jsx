@@ -12,7 +12,7 @@ function Profile() {
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>profile</title>
+            <title>個人檔案</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -22,7 +22,7 @@ function Profile() {
          </Helmet>
          <Header
             className="layoutHeader"
-            title="Profile"
+            title=" "
             slogan="An example made by Vite."
          />
          <div className="layoutContent container">
