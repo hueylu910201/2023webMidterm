@@ -1,8 +1,8 @@
 import { Modal, Button, Select, theme } from "antd";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItems, removeCartItems } from "../../redux/cartSlice";
-
+import { useUserInfo } from "../../react-query";
 import styles from "./basketmodal.module.css"
 import { CartIcon } from "../Icons";
 import { selectCartItems } from "../../redux/cartSlice";
@@ -10,15 +10,24 @@ const { Option } = Select;
 
 export default function BasketModal({ isOpen, toggleModal }) {
    const { token: { colorHeader } } = theme.useToken();
+   const { data: userInfo } = useUserInfo();
 
    const dispatch = useDispatch();
    const cartItems = useSelector(selectCartItems);
+   const navigate = useNavigate();
 
    const handleCancel = () => toggleModal(!isOpen);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
+   }
+   const checkoutHandler = () => {
+      handleCancel();
+      if (userInfo?.name)
+         navigate("/shopping/shipping")
+      else
+         navigate("/auth/login?redirect=/shopping/shipping");
    }
 
    return (
@@ -88,6 +97,7 @@ export default function BasketModal({ isOpen, toggleModal }) {
             className={styles.btn}
             type="primary"
             style={{ backgroundColor: colorHeader }}
+            onClick={checkoutHandler}
          >
             <CartIcon color={"#ffffff"} />
             <span style={{ marginLeft: 12 }}>結帳</span>

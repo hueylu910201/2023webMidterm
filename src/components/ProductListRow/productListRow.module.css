@@ -45,7 +45,6 @@
     display: flex;
     justify-content: center;
     margin: 1rem;
-    margin-left: 3rem;
     align-items: center;
 }
 @media (max-width:768px) {

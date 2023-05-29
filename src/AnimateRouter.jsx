@@ -6,6 +6,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
+import Shipping from './pages/Shipping';
+import Payment from './pages/Payment';
+import PlaceOrder from './pages/PlaceOrder';
+import ShoppingResult from './components/ResultCard';
 import { AnimatePresence } from 'framer-motion';
 
 function AnimateRouter() {
@@ -39,6 +43,12 @@ function AnimateRouter() {
                     <Route path="register" element={<Register />} />
                     <Route path="profile" element={<Profile />} />
                 </Route>
+                <Route path="shopping">
+              <Route path="shipping" element={<Shipping />} />
+              <Route path="payment" element={<Payment />} />
+              <Route path="placeorder" element={<PlaceOrder />} />
+              <Route path="Result" element={<ShoppingResult />} />
+            </Route>
             </Routes>
         </AnimatePresence>
 
