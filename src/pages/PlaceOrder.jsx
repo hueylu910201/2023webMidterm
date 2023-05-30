@@ -21,7 +21,7 @@ function PlaceOrder() {
             `}</style>
          </Helmet>
          <ShippingHeader
-            title="PlaceOrder Page" step1 step2 step3 step4
+            title="確認訂單" step1 step2 step3 step4
             className="layoutHeader"
             current={2}
          />

@@ -21,7 +21,7 @@ function Paymeng() {
             `}</style>
          </Helmet>
          <ShippingHeader
-            title="Payment Page" step1 step2 step3
+            title="選擇支付方式" step1 step2 step3
             className="layoutHeader"
             current={1}
          />

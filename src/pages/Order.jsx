@@ -12,7 +12,7 @@ function PlaceOrder() {
    return (
       <div className="mainLayout">
          <Helmet>
-            <title>product</title>
+            <title>訂單成立</title>
             <style>{`
                body { 
                   background-color: ${colorBgBase}; 
@@ -21,7 +21,7 @@ function PlaceOrder() {
             `}</style>
          </Helmet>
          <ShippingHeader
-            title="PlaceOrder Page" step1 step2 step3 step4
+            title="已送出訂單" step1 step2 step3 step4
             className="layoutHeader"
             current={3}
          />
